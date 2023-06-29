@@ -5,23 +5,24 @@ import axios from 'axios';
 const question = ref("");
 const result = ref("");
 
-async function uploadQuestion(){
+function uploadQuestion(){
     if(question.value===""){
         alert("问题不能为空！");
         return;
     }
     console.log(question.value);
     result.value="计算中...";
-    axios.get('/server/rumor/detected_program',{
+    axios.get('/server/rumor/detected_program/',{
         params: {
             sentence: question.value,
         },
-        timeout : 10000,
+        timeout : 0,
     }).then((res)=>{
+        console.log(res);
         if(res.status!==200){
             question.value="服务器出错，请稍后重试"
         }else{
-            if(res.is_rumor==="0"){
+            if(res.data.is_rumor==="0"){
                 result.value="不是谣言";
             }else{
                 result.value="是谣言";
