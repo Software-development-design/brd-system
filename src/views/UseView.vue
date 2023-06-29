@@ -12,7 +12,7 @@ async function uploadQuestion(){
     }
     console.log(question.value);
     result.value="计算中...";
-    axios.get('server/rumor/detected_program/',{
+    axios.get('/server/rumor/detected_program',{
         params: {
             sentence: question.value,
         },
