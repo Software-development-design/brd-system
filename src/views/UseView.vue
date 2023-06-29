@@ -18,7 +18,6 @@ function uploadQuestion(){
         },
         timeout : 0,
     }).then((res)=>{
-        console.log(res);
         if(res.status!==200){
             question.value="服务器出错，请稍后重试"
         }else{
