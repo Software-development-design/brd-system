@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 import { onMounted } from 'vue';
 
 onMounted(()=>{
-    const longIntroducitonTyped = new Typed('.longIntroduction',{
+    const longIntroducitonTyped = new Typed('.introductionText',{
         strings:[
             `本软件基于BLSTM（双向长短期记忆网络），是一款针对网上谣言进行自动识别和分类的谣言检测软件。
             软件部署在网页端，旨在帮助用户识别和过滤虚假信息，从而提高信息的可信度和准确性。
@@ -24,21 +24,37 @@ onMounted(()=>{
 
 <template>
     <div class="container">
-        <div class="longIntroduction introductionText"></div>  
+        <div class="introductionText"></div>
+        <div class="techList">
+            用到的技术栈如下
+            <div class="list">
+                <img class="techLogo" src="../assets/techLogo/vue.svg"/>
+                <img class="techLogo"  src="../assets/techLogo/vite.svg"/>
+                <img  class="techLogo" src="../assets/techLogo/antdesign.svg"/>
+                <img class="techLogo"  src="../assets/techLogo/axios.svg"/>
+                <img  class="techLogo" src="../assets/techLogo/django.png"/>
+            </div>
+        </div>
     </div>
+    
 </template>
 
 <style>
-.codePart{
-    width:80vw;
-    height:80vh;
-}
 .introductionText{
     width: 50vw;
     font-size: 3.5vh;
     margin-top: 5vh;
 }
 .container{
-    height: 85vh;
+    flex-direction: row;
+    display: flex;
+}
+.techList{
+    margin-top: 5vh;
+    margin-left: 2vh;
+}
+.techLogo{
+    max-width: 10vw;
+    max-height: 15vh;
 }
 </style>
