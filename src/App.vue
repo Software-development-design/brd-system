@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue'
 import {useRoute, useRouter} from 'vue-router';
+import {login_qr_key} from 'NeteaseCloudMusicApi'
 
 const routeName = useRoute().name;
 const router = useRouter();
